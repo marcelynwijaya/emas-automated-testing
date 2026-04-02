@@ -1,0 +1,193 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --dark-gold: #b8962e;
+    --sidebar-bg: #111315;
+    --body-bg: #f4f7f6;
+    --text-dark: #1a1d20;
+    --text-muted: #8898aa;
+    --white: #ffffff;
+    --sidebar-hover: rgba(212, 175, 55, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--body-bg);
+    color: #32325d;
+    overflow-x: hidden;
+}
+
+/* --- SIDEBAR STYLING --- */
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    transition: all 0.3s;
+    flex-shrink: 0;
+    z-index: 1000;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    padding: 2rem 1.5rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar-subheading {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.list-group-item {
+    background-color: transparent !important;
+    color: #adb5bd !important;
+    border: none !important;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list-group-item i {
+    width: 25px;
+    margin-right: 12px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.list-group-item:hover {
+    color: var(--gold) !important;
+    background-color: var(--sidebar-hover) !important;
+    padding-left: 2rem;
+}
+
+/* --- MAIN CONTENT & NAVBAR --- */
+#page-content-wrapper {
+    width: 100%;
+    overflow-y: auto;
+}
+
+.navbar {
+    background-color: var(--white);
+    padding: 1.25rem 2.5rem;
+    border-bottom: 1px solid #e6e9ec;
+}
+
+#section-title {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* --- CARD STYLING --- */
+.card {
+    border: none;
+    border-radius: 1.25rem;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    background-color: var(--white);
+    padding: 1rem;
+}
+
+.card h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+/* --- BUTTON STYLING --- */
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--white) !important;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    border-radius: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: var(--dark-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* --- UTILITY CLASSES --- */
+.text-gold { color: var(--gold) !important; }
+.fw-bold { font-weight: 700 !important; }
+.small-text { font-size: 0.85rem; color: var(--text-muted); }
+
+/* --- CHART DISPLAY --- */
+.chart-container {
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+canvas {
+    max-width: 100% !important;
+    margin-top: 15px;
+}
+
+/* --- ANIMATION (SECTION TRANSITION) --- */
+.content-section {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Form Styling */
+.form-control {
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0e0e0;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.15);
+    border-color: var(--gold);
+}
+
+/* Table Styling */
+.table { font-size: 0.9rem; }
+.table thead { background-color: #f8f9fa; }
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        width: 100%;
+        min-height: auto;
+    }
+    .d-flex {
+        flex-direction: column;
+    }
+}
