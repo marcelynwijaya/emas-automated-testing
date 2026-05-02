@@ -1,6 +1,6 @@
 # 🥇 Gold Analytics Dashboard with Automated Testing
 
-![Build Status](https://github.com/USERNAME/REPO_NAME/actions/workflows/main.yml/badge.svg)
+[![Python Flask CI](https://github.com/marcelynwijaya/emas-automated-testing/actions/workflows/main.yml/badge.svg)](https://github.com/marcelynwijaya/emas-automated-testing/actions)
 ![Coverage](https://img.shields.io/badge/coverage-91%25-brightgreen)
 
 ## 📋 Deskripsi Aplikasi
