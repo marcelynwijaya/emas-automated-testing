@@ -1,32 +1,26 @@
 name: Python Flask CI
 
-# Robot ini jalan setiap kali kamu PUSH atau PULL REQUEST
 on: [push, pull_request]
 
 jobs:
   build:
-    # Menggunakan komputer virtual berbasis Linux (Ubuntu)
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout kode dari GitHub
-      uses: actions/checkout@v3
+    - name: Checkout kode
+      uses: actions/checkout@v4
 
-    - name: Setup Python versi 3.9
-      uses: actions/setup-python@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
       with:
         python-version: '3.9'
 
-    - name: Install Library yang dibutuhkan
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install flask pandas scikit-learn pytest pytest-cov
 
-    - name: Jalankan Unit Test & Integration Test
+    - name: Jalankan Tests
       run: |
-        # Menjalankan pytest dan menghitung persentase coverage
+        # Robot akan mencari folder 'tests' di root proyek
         pytest --cov=processor --cov=app tests/
-
-    - name: Upload hasil coverage (Opsional)
-      run: |
-        pytest --cov=processor --cov=app --cov-report=xml tests/
