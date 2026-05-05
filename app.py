@@ -49,7 +49,7 @@ def predict():
     data = request.json
     tweet = data.get('tweet', '')
     
-    # GUNAKAN VALIDASI SEBELUM PREDIKSI
+    # VALIDASI SEBELUM PREDIKSI
     if not validate_input(tweet):
         return jsonify({'sentiment': 'Input Tidak Valid (Minimal 3 Karakter)'})
 
